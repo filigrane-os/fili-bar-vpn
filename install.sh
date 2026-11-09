@@ -10,7 +10,5 @@ if [ ! -e "$opts" ] && [ -f "$here/config.example.toml" ]; then
     mkdir -p "$(dirname "$opts")" && cp "$here/config.example.toml" "$opts" && echo "options: $opts (edit it to change the defaults)"
 fi
 command -v wg-quick >/dev/null 2>&1 || echo "wg-quick is missing (sudo xbps-install wireguard-tools)"
-if ! ls /etc/wireguard/*.conf >/dev/null 2>&1; then
-    echo "no tunnel yet: download a WireGuard config from your provider and install it as root:"
-    echo "  sudo install -m 600 NAME.conf /etc/wireguard/NAME.conf   (NAME: 15 characters at most)"
-fi
+# /etc/wireguard is readable by root only: do not guess, just say where the tunnels go
+echo "tunnels: sudo install -m 600 NAME.conf /etc/wireguard/NAME.conf (NAME: 15 characters at most, from your provider's account page)"
