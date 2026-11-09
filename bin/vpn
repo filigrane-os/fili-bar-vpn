@@ -10,7 +10,7 @@ FILI_LIB="${FILI_LIB:-$(dirname "$(readlink -f "$0")")/../lib}"
 if [ -r "$FILI_LIB/i18n.sh" ]; then . "$FILI_LIB/i18n.sh"; else t() { _t=$1; shift; printf -- "$_t" "$@"; }; fi
 DIR=/etc/wireguard
 active() { ip -o link show type wireguard up 2>/dev/null | awk -F': ' '{print $2}'; }
-confs() { sudo ls "$DIR" 2>/dev/null | sed -n 's/\.conf$//p'; }   # dossier en 700 root
+confs() { sudo ls "$DIR" 2>/dev/null | sed -n 's/\.conf$//p'; }   # directory is mode 700, root only
 
 up() {
     name="$1"
