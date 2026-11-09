@@ -17,4 +17,7 @@ stub sudo 'exit 0'
 check "vpn up without any config explains where to put one" 'in_env "$ROOT/bin/vpn" up < /dev/null 2>&1 | grep -q "/etc/wireguard"'
 check "no tunnel file in the repository" '[ -z "$(cd "$ROOT" && git ls-files "*.conf" "*.key" 2> /dev/null)" ]'
 
+check "extras: the menu entry has three fields" 'grep -v "^#" "$ROOT/extras/config/menu/entries.d/vpn" | awk -F"|" "NF != 3 { exit 1 }"'
+check "extras: the menu entry points to this plugin" 'grep -q "plugins/vpn/bin/vpn" "$ROOT/extras/config/menu/entries.d/vpn"'
+
 exit "$fail"

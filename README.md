@@ -25,3 +25,7 @@ sh tests/run.sh
 ```
 
 No network and no real account: the external commands (`notify-send`, `secret-tool`, `rclone`, `ip`...) are stubs and `HOME` is a temporary folder. The checks every plugin passes (manifest, scripts parse, no personal data in the repository, `install.sh` idempotent) are in `tests/common.sh`; GitHub Actions runs them on each push.
+
+## Extras
+
+`extras/config/menu/entries.d/vpn` adds a "VPN" entry to the launcher menu; `fili-bar install` links it into `~/.config` (never over your own file).

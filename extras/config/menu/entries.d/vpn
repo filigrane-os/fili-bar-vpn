@@ -1,0 +1,2 @@
+# VPN: opens the vpn tool of this plugin in a terminal (menu entries: Label | mode | command)
+VPN | run | $HOME/.local/bin/bar-tui $HOME/.local/share/filigrane/bar/plugins/vpn/bin/vpn
