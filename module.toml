@@ -1,0 +1,8 @@
+title = "VPN"
+description = "Active WireGuard tunnel, click toggles it"
+api = 1
+side = "right"
+order = 5
+cmd = "./bin/vpn-state"
+interval = 15
+click = "./bin/vpn"

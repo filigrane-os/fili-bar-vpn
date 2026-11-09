@@ -1,0 +1,2 @@
+# Copy to ~/.config/filigrane/bar/vpn.toml (never committed). No option yet:
+# tunnels are /etc/wireguard/NAME.conf (mode 600, root) from your provider; they never go in a repository.

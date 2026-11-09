@@ -1,0 +1,4 @@
+#!/bin/sh
+# One JSON line for the bar: the active WireGuard tunnel (empty text = hidden).
+n="$(ip -o link show type wireguard up 2>/dev/null | awk -F': ' '{print $2; exit}')"
+[ -n "$n" ] && printf '{"text": "%s", "class": "on", "tooltip": "VPN: %s"}\n' "$n" "$n" || printf '{"text": ""}\n'
