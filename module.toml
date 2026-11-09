@@ -6,3 +6,4 @@ order = 5
 cmd = "./bin/vpn-state"
 interval = 15
 click = "./bin/vpn"
+packages = ["wireguard-tools"]

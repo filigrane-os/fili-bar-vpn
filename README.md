@@ -10,6 +10,10 @@ Tunnels are `/etc/wireguard/NAME.conf` (mode 600, root), downloaded from your pr
 
 `fili-bar install` also runs `install.sh`: it creates your options file from `config.example.toml`, asks for what is missing (credentials go to the keyring or to a file under `~/.config`, never to this folder) and prints what is left to do. Run it again with `fili-bar setup vpn`; it is safe to repeat.
 
+## Packages
+
+Declared in `module.toml` (`packages`), installed by `fili-bar install --yes`: `wireguard-tools` (no daemon).
+
 ## Personal data
 
 None in this repository: the tunnel files stay in `/etc/wireguard`. `.gitignore` blocks `*.conf` and `*.key` as a safety net.
